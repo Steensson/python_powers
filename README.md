@@ -1,4 +1,4 @@
-# Functionalities to increase your python powers! 💪🏼
+# Functionalities to increase your python powers! 💥
 
 ![](power.jpg)
 
