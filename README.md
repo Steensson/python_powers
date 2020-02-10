@@ -103,7 +103,7 @@ for a in sequence_A:
 
 ## Built-in Functions
 
-For easy explanation of `zip()`, `map()` and `filter()` I'll use the following lists:
+For easy explanation of `zip()`, `map()`, `filter()` and `enumerate()` I'll use the following lists:
 
 ```python
 color_names = ['red', 'blue', 'teal', 'orange', 'yellow', 'gray']
@@ -149,6 +149,48 @@ In the hexadecimal system, F is known as the highest value. Every hexadecimal nu
 warm_colors = lambda x: 'ff' == name2hex[x][1:3]
 print(list(filter(warm_colors, random_colors)))
 > ['red', 'orange', 'yellow', 'red']
+```
+
+### enumerate()
+Often you'll see, that python developers use the `range()` function in combination with the `len()` function to create an index in a `for` loop:
+
+```python
+for i in range(len(color_names)):
+    print(i, color_names[i])
+> 0 red
+> 1 blue
+> 2 teal
+> 3 orange
+> 4 yellow
+> 5 gray
+```
+
+
+
+We're actually not taking advantage of the fact, that the list `color_names` is an iterater but rather making a fake index. Use `enumerate()` insted, which return an enumerate object, which itself is an iterator:
+
+```python
+for i, color_name in enumerate(color_names):
+    print(i, color_name)
+> 0 red
+> 1 blue
+> 2 teal
+> 3 orange
+> 4 yellow
+> 5 gray
+```
+
+You can also set the argument `start` to specify the starting number of the index, which is extremely helpful instead of the often seen `i+1` index:
+
+```python
+for i, color_name in enumerate(color_names, start=1):
+    print(i, color_name)
+> 1 red
+> 2 blue
+> 3 teal
+> 4 orange
+> 5 yellow
+> 6 gray
 ```
 
 ## Numpy functions
