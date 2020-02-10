@@ -167,7 +167,7 @@ for i in range(len(color_names)):
 
 
 
-We're actually not taking advantage of the fact, that the list `color_names` is an iterater but rather making a fake index. Use `enumerate()` insted, which return an enumerate object, which itself is an iterator:
+We're actually not taking advantage of the fact, that the list `color_names` is an iterater but rather making a fake index. Use `enumerate()` instead, which return an enumerate object, which itself is an iterator:
 
 ```python
 for i, color_name in enumerate(color_names):
