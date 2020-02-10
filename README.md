@@ -23,6 +23,8 @@
 - [Numpy functions](#numpy-functions)
   - [np.where()](#npwhere)
   - [np.arg*()](#nparg)
+- [Smaller libraries](#smaller-libraries)
+  - [holidays](#holidays)
 
 
 ## Built-in functionalities
@@ -353,3 +355,68 @@ print(np.argsort(integers))
 print(integers[np.argsort(integers)])
 > [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 42, 73, 1337]
 ```
+
+## Smaller libraries
+
+### holidays
+Ever working with dates? You can do all sort of feature engineering on dates, one of them are the binary question; is it a holiday?
+
+```python
+import holidays
+
+print(holidays.Denmark(years=2019))
+> {datetime.date(2019, 1, 1): 'Nytårsdag',
+>  datetime.date(2019, 4, 14): 'Palmesøndag',
+>  datetime.date(2019, 4, 18): 'Skærtorsdag',
+>  datetime.date(2019, 4, 19): 'Langfredag',
+>  datetime.date(2019, 4, 21): 'Påskedag',
+>  datetime.date(2019, 4, 22): 'Anden påskedag',
+>  datetime.date(2019, 5, 17): 'Store bededag',
+>  datetime.date(2019, 5, 30): 'Kristi himmelfartsdag',
+>  datetime.date(2019, 6, 9): 'Pinsedag',
+>  datetime.date(2019, 6, 10): 'Anden pinsedag',
+>  datetime.date(2019, 12, 25): 'Juledag',
+>  datetime.date(2019, 12, 26): 'Anden juledag'}
+```
+
+You can easily create a function, in this case `is_holiday()` to lookup up, if a given `datetime` object is a holiday:
+
+```python
+def is_holiday(dt):
+    try:
+        if holidays.Denmark(years=dt.year)[dt]:
+            return True
+    except KeyError:
+        return False
+```
+
+And say you have a pandas dataframe with dates:
+
+```python
+start = datetime(year=2019, month=1, day=1)
+end = datetime(year=2019, month=12, day=31)
+df = pd.DataFrame()
+df['date'] = pd.date_range(start, end)
+print(df.head())
+>         date
+> 0 2019-01-01
+> 1 2019-01-02
+> 2 2019-01-03
+> 3 2019-01-04
+> 4 2019-01-05
+```
+
+It's pretty straight-forward to enrich your dataset:
+
+```python
+df['holiday'] = df.date.apply(is_holiday)
+print(df.head())
+>         date  holiday
+> 0 2019-01-01     True
+> 1 2019-01-02    False
+> 2 2019-01-03    False
+> 3 2019-01-04    False
+> 4 2019-01-05    False
+```
+
+
