@@ -1,4 +1,4 @@
-# Functionalities to increase your python powers!
+# Functionalities to increase your python powers! 💪🏼
 
 - [Built-in functionalities](#built-in-functionalities)
   - [Indexing](#indexing)
