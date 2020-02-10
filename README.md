@@ -1,5 +1,23 @@
 # Functionalities to increase your python powers!
 
+- [Built-in functionalities](#built-in-functionalities)
+  - [Indexing](#indexing)
+    - [Reverse string](#reverse-string)
+  - [Comprehensions](#comprehensions)
+    - [List Comprehensions](#list-comprehensions)
+    - [Dictionary Comprehensions](#dictionary-comprehensions)
+    - [Set Comprehensions](#set-comprehensions)
+    - [if/else and nested Comprehensions](#ifelse-and-nested-comprehensions)
+- [Built-in functions](#built-in-functions)
+  - [zip()](#zip)
+  - [map()](#map)
+  - [filter()](#filter)
+  - [enumerate()](#enumerate)
+- [Numpy functions](#numpy-functions)
+  - [np.where()](#npwhere)
+  - [np.arg*()](#nparg)
+
+
 ## Built-in functionalities
 
 ### Indexing
@@ -14,7 +32,7 @@ name[::-1]
 > 'nodlehS'
 ```
 
-but how does this work? When you are slicing a string you can also specify the step `your_string[start:stop:step]`, when you set step as -1, it will go backwards (so to speak), and when you don't specify start and stop slicing arguments, it will take the whole string. That's why the `[::-1]` slicing will reverse your string.
+But how does this work? When you are slicing a string you can also specify the step `your_string[start:stop:step]`, when you set step as -1, it will go backwards (so to speak), and when you don't specify start and stop slicing arguments, it will take the whole string. That's why the `[::-1]` slicing will reverse your string.
 
 
 ### Comprehensions
@@ -118,7 +136,7 @@ for a in sequence_A:
 ```
 
 
-## Built-in Functions
+## Built-in functions
 
 For easy explanation of `zip()`, `map()`, `filter()` and `enumerate()` I'll use the following lists:
 
