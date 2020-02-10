@@ -1,5 +1,9 @@
 # Functionalities to increase your python powers! 💪🏼
 
+![](power.jpg)
+
+## Table of Contents
+
 - [Built-in functionalities](#built-in-functionalities)
   - [Indexing](#indexing)
     - [Reverse string](#reverse-string)
