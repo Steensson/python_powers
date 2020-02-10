@@ -193,6 +193,20 @@ for i, color_name in enumerate(color_names, start=1):
 > 6 gray
 ```
 
+How about if the iterator is a dictionary? Well, you just need to unpack it with `.items()`:
+
+```python
+for i, (clr_name, clr_hex) in enumerate(name2hex.items()):
+    print(i, clr_name, clr_hex)
+> 0 red #ff0000
+> 1 blue #0000ff
+> 2 teal #008080
+> 3 orange #ff6600
+> 4 yellow #ff9900
+> 5 gray #808080
+```
+
+
 ## Numpy functions
 
 For easy explanation of `np.where()` and `np.arg*()` I'll use the following arrays:
