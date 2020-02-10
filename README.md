@@ -17,6 +17,9 @@
   - [map()](#map)
   - [filter()](#filter)
   - [enumerate()](#enumerate)
+- [Standard libraries](#standard-libraries)
+  - [collections](#collections)
+    - [Counter()](#counter)
 - [Numpy functions](#numpy-functions)
   - [np.where()](#npwhere)
   - [np.arg*()](#nparg)
@@ -243,6 +246,57 @@ for i, (clr_name, clr_hex) in enumerate(name2hex.items()):
 > 3 orange #ff6600
 > 4 yellow #ff9900
 > 5 gray #808080
+```
+
+## Standard libraries
+
+### collections
+
+#### Counter()
+
+You probably already know the `.value_counts()` function you can apply to a pandas series. But did you know, that the `Counter()` function from the collections library can do (pretty much) the same thing without converting a list to a pandas series and use their built-in function? Check this out:
+
+```python
+from collections import Counter
+
+random_colors = ['blue', 'teal', 'red', 'gray', 'orange', 'blue', 'yellow', 'teal', 'red', 'blue']
+clr_counts = Counter(random_colors)
+print(clr_counts.most_common())
+> [('blue', 3),
+>  ('teal', 2),
+>  ('red', 2),
+>  ('gray', 1),
+>  ('orange', 1),
+>  ('yellow', 1)]
+```
+
+And you can even update your Counter object with more values:
+
+```python
+clr_counts.update(['teal', 'teal'])
+print(clr_counts.most_common())
+> [('teal', 4),
+>  ('blue', 3),
+>  ('red', 2),
+>  ('gray', 1),
+>  ('orange', 1),
+>  ('yellow', 1)]
+```
+
+Maybe you only want the top three colors in the Counter object:
+
+```python
+print(clr_counts.most_common(3))
+> [('teal', 4),
+>  ('blue', 3),
+>  ('red', 2)]
+```
+
+Or maybe you were wondering, how many times red appeared in the Counter object:
+
+```python
+print(clr_counts['red'])
+> 2
 ```
 
 
