@@ -1,10 +1,27 @@
 # Functionalities to increase your python powers!
 
-## Comprehensions
+## Built-in functionalities
+
+### Indexing
+
+## Reverse string
+
+Reverse a string with this simple slicing:
+
+```python
+name = 'Sheldon'
+name[::-1]
+> 'nodlehS'
+```
+
+but how does this work? When you are slicing a string you can also specify the step `your_string[start:stop:step]`, when you set step as -1, it will go backwards (so to speak), and when you don't specify start and stop slicing arguments, it will take the whole string. That's why the `[::-1]` slicing will reverse your string.
+
+
+### Comprehensions
 
 Comprehensions are the compact form of for loops.
 
-### List Comprehensions
+#### List Comprehensions
 
 Instead of:
 
@@ -25,7 +42,7 @@ print(squared)
 > [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 ```
 
-### Dictionary Comprehensions
+#### Dictionary Comprehensions
 
 Instead of:
 
@@ -48,7 +65,7 @@ print(len_of_names)
 > {'Sheldon': 7, 'Howard': 6, 'Leonard': 7, 'Raj': 3, 'Penny': 5, 'Bernadette': 10, 'Amy': 3}
 ```
 
-### Set Comprehensions
+#### Set Comprehensions
 
 Instead of:
 
@@ -73,7 +90,7 @@ print(equal_numbers)
 > {0, 2, 4, 6, 8, 10}
 ```
 
-### if/else and nested Comprehensions
+#### if/else and nested Comprehensions
 If you want to include an if/else-statement in your comprehension, follow the schema:
 
 ```python
