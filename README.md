@@ -4,7 +4,7 @@
 
 ### Indexing
 
-## Reverse string
+#### Reverse string
 
 Reverse a string with this simple slicing:
 
